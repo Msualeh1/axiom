@@ -1,31 +1,45 @@
-.bottom-nav {
-  display: flex;
-  flex-direction: column;
+.top-nav {
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
   background-color: #fff; /* Background color */
-  border-top: 1px solid #ddd; /* Top border */
-  position: fixed; /* Fixed to the bottom */
-  top: 0;
+  border-bottom: 1px solid #ddd; /* Bottom border for the top navbar */
+  position: fixed; /* Fixed to the top */
+  top: 0; /* Position at the top */
   width: 100%;
   z-index: 1000; /* Ensure it stays on top */
+  padding: 10px; /* Padding for the navbar */
+}
+
+.logo {
+  display: flex; /* Flexbox for logo */
+  align-items: center; /* Center logo items vertically */
+  margin-right: 20px; /* Space between logo and nav items */
+}
+
+.logo-text {
+  font-size: 24px; /* Size of the logo text */
+  font-weight: bold; /* Bold text */
+  margin-left: 10px; /* Space between icon and text */
 }
 
 .nav-toggle {
   display: none; /* Hidden by default */
   justify-content: center;
   align-items: center;
-  padding: 10px;
   cursor: pointer;
+  margin-left: 8rem; /* Push toggle button to the right */
+  
 }
 
 .nav-items {
   display: flex; /* Flexbox for navigation items */
-  justify-content: space-around;
-  padding: 10px 0; /* Padding for nav items */
+  justify-content: center; /* Center nav items */
+  flex: 1; /* Allow nav items to grow and fill space */
 }
 
 .nav-item {
   text-align: center;
-  flex: 1;
+  flex: 1; /* Allow nav items to take equal space */
   display: flex; /* Flexbox for individual items */
   flex-direction: column; /* Stack icon and text vertically */
   align-items: center; /* Center items horizontally */
@@ -55,14 +69,14 @@
   .nav-toggle {
     display: flex; /* Show toggle button on small screens */
   }
-  
+
   .nav-items {
     display: none; /* Hide nav items by default on small screens */
     flex-direction: column; /* Stack items vertically */
     width: 100%;
     background-color: #fff; /* Background color for dropdown */
     position: absolute; /* Position to overlay */
-    bottom: 50px; /* Space above the toggle */
+    top: 50px; /* Space below the toggle */
     left: 0;
     border: 1px solid #ddd; /* Border around the dropdown */
   }
