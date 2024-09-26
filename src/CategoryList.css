@@ -1,0 +1,107 @@
+.category-tab {
+  background-color: #2e3d55; /* Dark blue background */
+  color: #fff;               /* White text color */
+  padding: 15px;
+  border-radius: 8px;        /* Smooth edges */
+  max-width: 250px;          /* Max width of the menu */
+  min-height: 20rem;
+  
+}
+
+.category-tab ul {
+  list-style-type: none;     /* Remove default bullet points */
+  padding-left: 0;           /* Remove default padding */
+}
+
+.category-tab li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+
+.category-tab li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-tab li div span {
+  flex-grow: 1;              /* Expand span to take full width */
+}
+
+.category-tab li div span:first-child {
+  text-align: left;
+}
+
+.category-tab li div span:last-child {
+  text-align: left;
+}
+
+.category-tab li div svg {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.category-tab ul ul {
+  padding-left: 20px;
+}
+
+.category-tab ul ul li {
+  padding-left: 0;
+}
+
+.category-tab ul ul li:hover {
+ 
+
+  border-radius: 4px;
+}
+
+
+.category-list {
+  flex: 0 0 300px; /* Fixed width for the category list */
+  /* Adjust as necessary based on your design */
+}
+
+
+.hero-section {
+  display: flex;
+  align-items: flex-start; /* Align items at the start */
+  background-color: #6F8FAF;
+  padding: 20px;
+  color: white;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+  min-height: 400px;
+  margin-top: 2rem;
+    padding-top: 7rem;
+    justify-content: center;
+    padding-right:10rem;
+}
+
+.hero-text {
+  flex: 1; /* Allow this section to take up remaining space */
+  margin-right: 20px; /* Add space between text and category list */
+  max-width: 100%;
+  padding-right:20rem;
+}
+
+.category-list {
+  flex: 0 0 auto; /* Allow the category list to expand as needed */
+  max-width: 300px; /* Optional: Limit maximum width */
+  margin-left: 20px; 
+}
+
+/* Optional: Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+      flex-direction: column; /* Stack on smaller screens */
+  }
+
+  .category-list {
+      margin-top: 20px; /* Add space above the category list when stacked */
+      width: 100%; /* Full width for category list on smaller screens */
+  }
+}
+
+
+

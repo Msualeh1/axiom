@@ -1,0 +1,73 @@
+.bottom-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff; /* Background color */
+  border-top: 1px solid #ddd; /* Top border */
+  position: fixed; /* Fixed to the bottom */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.nav-toggle {
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-items {
+  display: flex; /* Flexbox for navigation items */
+  justify-content: space-around;
+  padding: 10px 0; /* Padding for nav items */
+}
+
+.nav-item {
+  text-align: center;
+  flex: 1;
+  display: flex; /* Flexbox for individual items */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 5px; /* Add some padding */
+}
+
+.nav-item span {
+  margin-top: 4px; /* Add space between icon and text */
+}
+
+.notification-icon {
+  position: relative; /* Position for notification badge */
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex; /* Show toggle button on small screens */
+  }
+  
+  .nav-items {
+    display: none; /* Hide nav items by default on small screens */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+    background-color: #fff; /* Background color for dropdown */
+    position: absolute; /* Position to overlay */
+    bottom: 50px; /* Space above the toggle */
+    left: 0;
+    border: 1px solid #ddd; /* Border around the dropdown */
+  }
+
+  .nav-items.open {
+    display: flex; /* Show nav items when open */
+  }
+}
