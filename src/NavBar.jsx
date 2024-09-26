@@ -18,9 +18,9 @@ const BottomNav = () => {
     <div className="top-nav">
       <div className="logo">
         <FaStore size={30} /> {/* Store icon */}
-        <span className="logo-text">RockStore</span> {/* Logo text */}
+        <span className="logo-text" style={{color:"black"}}>RockStore</span> {/* Logo text */}
       </div>
-      <div className="nav-toggle" onClick={toggleNav} style={{paddingRight:'5rem'}}>
+      <div className="nav-toggle" onClick={toggleNav} style={{paddingRight:'5rem', color:"black"}}>
         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </div>
       <div className={`nav-items ${isOpen ? 'open' : ''}`}>
