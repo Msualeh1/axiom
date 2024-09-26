@@ -32,6 +32,7 @@
 }
 
 .nav-items {
+  color:black;
   display: flex; /* Flexbox for navigation items */
   justify-content: center; /* Center nav items */
   flex: 1; /* Allow nav items to grow and fill space */
