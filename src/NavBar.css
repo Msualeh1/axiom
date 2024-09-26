@@ -1,5 +1,7 @@
 .top-nav {
   display: flex; /* Use flexbox layout */
+  
+  justify-content: space-between;
   align-items: center; /* Center items vertically */
   background-color: #fff; /* Background color */
   border-bottom: 1px solid #ddd; /* Bottom border for the top navbar */
