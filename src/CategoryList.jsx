@@ -15,7 +15,7 @@ const GrandchildCategory = ({ grandchildCategories = [], onEdit }) => {
         <ul>
             {grandchildCategories.map((grandchild) => (
                 <li key={grandchild.slug}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', alignItems: 'center'}}>
                     <Link to={`/grandchild/${grandchild.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <span>{grandchild.name}</span>
                         </Link>
@@ -185,7 +185,7 @@ const CategoryList = () => {
                     <li key={category.slug}>
                         <div
                             onClick={() => setExpandedCategory(category.slug === expandedCategory ? null : category.slug)}
-                            style={{ display: 'flex', alignItems: 'center' }}
+                            style={{ display: 'flex', alignItems: 'center'}}
                         >
                             <FontAwesomeIcon icon={expandedCategory === category.slug ? faChevronDown : faChevronRight} style={{ marginRight: '8px' }} />
                             <span>{category.name}</span>

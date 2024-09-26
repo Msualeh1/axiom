@@ -98,12 +98,16 @@
   .hero-section {
       flex-direction: column; /* Stack on smaller screens */
   }
+  .hero-text{
+    width: 15rem;
+    text-align: center;
+    padding-left: 2rem;
+  }
 
   .category-list {
       margin-top: 20px; /* Add space above the category list when stacked */
       width: 100%; /* Full width for category list on smaller screens */
   }
 }
-
 
 
