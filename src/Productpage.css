@@ -77,7 +77,7 @@
 .edit-form textarea {
     display: block;
     margin: 5px 0;
-    width: 100%; /* Full width for inputs */
+    width: 90%; /* Full width for inputs */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
