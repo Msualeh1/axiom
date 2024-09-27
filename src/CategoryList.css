@@ -99,7 +99,7 @@
   .hero-section {
       flex-direction: column; /* Stack on smaller screens */
       position: relative;
-      top: -30px;
+      
   }
   .hero-text{
     max-width: 100%;
