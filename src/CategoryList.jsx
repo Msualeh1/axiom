@@ -83,7 +83,7 @@ const CategoryList = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/categories');
+                const response = await fetch('http://3.26.215.90:5000/api/categories');
                 if (!response.ok) {
                     throw new Error('Failed to fetch categories');
                 }
@@ -123,7 +123,7 @@ const CategoryList = () => {
     const handleSaveEdit = async (updatedCategory) => {
         console.log("Updating category with slug:", updatedCategory.slug);
         try {
-            const response = await fetch(`http://localhost:5000/api/categories/${updatedCategory.slug}`, {
+            const response = await fetch(`http://3.26.215.90:5000/api/categories/${updatedCategory.slug}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
