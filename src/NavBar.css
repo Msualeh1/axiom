@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-left: 8rem; /* Push toggle button to the right */
+  margin-left: 6rem; /* Push toggle button to the right */
   
 }
 
@@ -72,6 +72,7 @@
   .nav-toggle {
     display: flex; /* Show toggle button on small screens */
   }
+ 
 
   .nav-items {
     display: none; /* Hide nav items by default on small screens */

@@ -17,7 +17,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`http://3.26.215.90:5000/api/products/${slug}`);
+                const response = await fetch(`http://localhost:5000/api/products/${slug}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch products');
                 }
@@ -41,7 +41,7 @@ const ProductPage = () => {
 
     const handleUpdate = async (id) => {
         try {
-            const response = await fetch(`http://3.26.215.90:5000/api/products/${id}`, {
+            const response = await fetch(`http://localhost:5000/api/products/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

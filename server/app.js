@@ -8,7 +8,7 @@ const app = express();
 const PORT = 5000;
 // Enable CORS for React frontend running on port 5173
 const corsOptions = {
-  origin: 'http://3.26.215.90:5173',
+  origin: 'http://localhost:5173',
 };
 
 // Use CORS middleware before defining routes

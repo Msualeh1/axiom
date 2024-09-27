@@ -69,6 +69,7 @@
   justify-content: center;
   align-items: center;
   
+  
   background-color: #6F8FAF;
   padding: 20px;
   color: white;
@@ -97,17 +98,36 @@
 @media (max-width: 768px) {
   .hero-section {
       flex-direction: column; /* Stack on smaller screens */
+      position: relative;
+      top: -10px;
   }
   .hero-text{
-    width: 15rem;
+    max-width: 100%;
     text-align: center;
     padding-left: 2rem;
   }
 
   .category-list {
       margin-top: 20px; /* Add space above the category list when stacked */
-      width: 100%; /* Full width for category list on smaller screens */
+      max-width: 100%; /* Full width for category list on smaller screens */
   }
 }
 
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 10px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 0.85rem;
+    }
+
+    .category-list {
+        margin-top: 15px;
+    }
+}
 
