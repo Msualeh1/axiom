@@ -4,6 +4,7 @@ import './Productpage.css'; // Ensure this is the correct path
 import NavBar from './NavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import Footer from './Footer.jsx'
 
 const ProductPage = () => {
     const { slug } = useParams();
@@ -109,6 +110,7 @@ const ProductPage = () => {
                     )}
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

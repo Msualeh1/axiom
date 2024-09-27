@@ -1,71 +1,76 @@
 /* ProductPage.css */
 
+/* General product page styling */
 .product-page {
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
+    padding-top: 5rem; /* Added top padding */
+    background-color: #6F8FAF;
     font-family: 'Arial', sans-serif;
-    padding-top:5rem;
 }
 
 .title {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333; /* Dark text for readability */
+    color: #333;
+    text-align: center;
 }
 
+/* Product grid layout */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
     gap: 20px; /* Space between grid items */
+    width: 100%; /* Ensure grid takes full width */
+    margin: 0 auto; /* Center the grid if necessary */
 }
 
 .product-card {
-    background-color: #fff; /* White background for product cards */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    transition: transform 0.2s; /* Smooth transition for hover effect */
-    display: flex; /* Flexbox layout for better alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items at the start */
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .product-card:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
+    transform: scale(1.02); /* Slight hover effect */
 }
 
 .product-name {
     font-size: 1.25rem;
-    color: #333; /* Consistent dark color */
-    margin: 0 0 10px; /* Margin for spacing */
-    display: flex; /* Flex layout to align name and edit icon */
-    justify-content: space-between; /* Space between name and icon */
-    align-items: center; /* Center items vertically */
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .product-description {
     font-size: 0.9rem;
-    color: #555; /* Lighter color for description */
-    margin-bottom: 15px; /* Space below description */
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .edit-icon {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 10px; /* Space between name and icon */
-    color: #007bff; /* Edit icon color */
-    opacity: 0.7; /* Slight transparency */
-    transition: color 0.2s, opacity 0.3s; /* Transition for hover effect */
+    margin-left: 10px;
+    color: #007bff;
+    opacity: 0.7;
+    transition: color 0.2s, opacity 0.3s;
 }
 
 .edit-icon:hover {
-    color: #0056b3; /* Change to a darker shade on hover */
-    opacity: 1; /* Full opacity on hover */
+    color: #0056b3;
+    opacity: 1;
 }
 
 .edit-form {
-    margin-top: 15px; /* Increased space above the edit form */
+    margin-top: 15px;
 }
 
 .edit-form input,
@@ -73,34 +78,83 @@
     display: block;
     margin: 5px 0;
     width: 100%; /* Full width for inputs */
-    padding: 8px; /* Padding for inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners */
-    resize: vertical; /* Allow vertical resizing for textarea */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .edit-form button {
-    background-color: #007bff; /* Bootstrap-like primary color */
-    color: #fff; /* White text */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    padding: 10px; /* Padding for buttons */
-    cursor: pointer; /* Pointer cursor */
-    margin-right: 5px; /* Space between buttons */
-    transition: background-color 0.3s; /* Transition for hover effect */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
 }
 
 .edit-form button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
 }
 
-.no-products {
-    text-align: center;
-    color: #777; /* Subtle gray for no products message */
-}
-
+/* No products or error/loading messages */
+.no-products,
 .loading,
 .error {
     text-align: center;
-    color: #d9534f; /* Bootstrap danger color */
+    color: #777; /* Gray color for empty/error messages */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .product-description {
+        font-size: 0.95rem;
+    }
+
+    .edit-form input,
+    .edit-form textarea {
+        font-size: 0.9rem;
+        width: 90%;
+    }
+
+    .edit-form button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column on small screens */
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .edit-form input,
+    .edit-form textarea {
+        font-size: 0.85rem;
+        
+    }
+
+    .edit-form button {
+        font-size: 0.85rem;
+    }
 }
