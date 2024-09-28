@@ -186,6 +186,54 @@ app.put('/api/products/:id', async (req, res) => {
 
 
 
+// Search endpoint
+// Search endpoint
+app.get('/search', async (req, res) => {
+  const { query } = req.query; // Get search query from request
+
+  if (!query) {
+    return res.status(400).json({ message: 'Search query is required' });
+  }
+
+  try {
+    // Search for products matching the query within the nested category structure
+    const categories = await Category.find({
+      $or: [
+        { 'childCategories.grandchildCategories.products.name': { $regex: query, $options: 'i' } },
+        { 'childCategories.grandchildCategories.products.description': { $regex: query, $options: 'i' } }
+      ]
+    });
+
+    // Extract products that match the query from nested structure
+    let results = [];
+
+    categories.forEach(category => {
+      category.childCategories.forEach(child => {
+        child.grandchildCategories.forEach(grandchild => {
+          const filteredProducts = grandchild.products.filter(product =>
+            product.name.toLowerCase().includes(query.toLowerCase()) ||
+            product.description.toLowerCase().includes(query.toLowerCase())
+          );
+
+          results = results.concat(filteredProducts);
+        });
+      });
+    });
+
+    // Remove duplicates based on product id
+    const uniqueResults = results.filter((product, index, self) =>
+      index === self.findIndex(p => p.id === product.id)
+    );
+
+    res.json(uniqueResults);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
+
 
 
 

@@ -68,9 +68,23 @@
   font-size: 12px;
 }
 
+.nav-search {
+  flex-grow: 1;
+  max-width: 400px; /* Adjust the max-width as needed */
+}
+.input{
+
+}
+
+
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex; /* Show toggle button on small screens */
+  }
+
+  .nav-search {
+    width: 100%;
+    margin-top: 10px;
   }
  
 
@@ -89,3 +103,4 @@
     display: flex; /* Show nav items when open */
   }
 }
+

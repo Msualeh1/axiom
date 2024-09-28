@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import './Productpage.css'; // Ensure this is the correct path
 import NavBar from './NavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import Footer from './Footer.jsx'
+import Footer from './Footer.jsx';
 
-const ProductPage = () => {
+const Productpage = () => {
     const { slug } = useParams();
+    const location = useLocation();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,13 +16,22 @@ const ProductPage = () => {
     const [updatedName, setUpdatedName] = useState('');
     const [updatedDescription, setUpdatedDescription] = useState('');
 
+    const query = new URLSearchParams(location.search).get('query');
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`http://3.26.215.90:5000/api/products/${slug}`);
+                let response;
+                if (query) {
+                    response = await fetch(`http://3.26.215.90:5000/search?query=${query}`);
+                } else {
+                    response = await fetch(`http://3.26.215.90:5000/api/products/${slug}`);
+                }
+
                 if (!response.ok) {
                     throw new Error('Failed to fetch products');
                 }
+
                 const data = await response.json();
                 setProducts(data);
                 setLoading(false);
@@ -32,7 +42,7 @@ const ProductPage = () => {
         };
 
         fetchProducts();
-    }, [slug]);
+    }, [slug, query]);
 
     const handleEditClick = (product) => {
         setEditingProduct(product);
@@ -72,13 +82,13 @@ const ProductPage = () => {
         <>
             <NavBar />
             <div className="product-page">
-                <h1 className="title">Products in {slug} Category</h1>
+                <h1 className="title">{query ? `Search Results for: "${query}"` : `Products in ${slug} Category`}</h1>
                 <div className="product-grid">
                     {products.length === 0 ? (
-                        <div className="no-products">No products found in this category.</div>
+                        <div className="no-products">No products found.</div>
                     ) : (
-                        products.map(product => (
-                            <div className="product-card" key={product.id}>
+                        products.map((product, index) => (
+                            <div className="product-card" key={product.id ? product.id : index}> {/* Using index as fallback */}
                                 <h3 className="product-name">
                                     {product.name}
                                     <button onClick={() => handleEditClick(product)} aria-label="Edit product" className="edit-icon">
@@ -110,9 +120,9 @@ const ProductPage = () => {
                     )}
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };
 
-export default ProductPage;
+export default Productpage;

@@ -2,6 +2,7 @@ import React from 'react';
 import CategoryList from './CategoryList'; // Adjust the path as needed
 import './CategoryList.css'; // Import the CSS file for styling
 
+
 const HeroSection = () => {
     return (
         <div className="hero-section">
@@ -12,6 +13,7 @@ const HeroSection = () => {
                     Shop now and enjoy the best deals available!
                 </p>
             </div>
+            
             <div className="category-list">
                 <CategoryList />
             </div>
